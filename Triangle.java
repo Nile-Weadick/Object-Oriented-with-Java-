@@ -1,3 +1,15 @@
+/*
+Define a method hypotenuse that calculates the
+ length of the hypotenuse of a right triangle
+when the lengths of the other two sides are given. 
+(Use the sample data in Fig. 6.26.) The method
+should take two arguments of type double and return
+ the hypotenuse as a double. Incorporate this
+method into an application that reads values for 
+side1 and side2 and performs the calculation with
+the hypotenuse method. 
+*/
+
 import java.util.Scanner;
 public class Triangle {
 
