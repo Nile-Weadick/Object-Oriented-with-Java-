@@ -1,39 +1,60 @@
+package HomeWork.chap9;
+/*
+9.14 (Employee Hierarchy) In this chapter, you studied an inheritance
+hierarchy in which class BasePlusCommissionEmployee inherited
+from class CommissionEmployee. However, not all types of
+employees are CommissionEmployees. In this exercise, you’ll create a
+more general Employee superclass that factors out the attributes and
+behaviors in class CommissionEmployee that are common to all
+Employees. The common attributes and behaviors for all Employees
+are firstName, lastName, socialSecurityNumber,
+getFirstName, getLastName, getSocialSecurityNumber
+and a portion of method toString. Create a new superclass Employee
+that contains these instance variables and methods and a constructor. Next,
+rewrite class CommissionEmployee from Section 9.4.5 as a subclass
+of Employee. Class CommissionEmployee should contain only the
+instance variables and methods that are not declared in superclass
+Employee. Class CommissionEmployee’s constructor should invoke
+class Employee’s constructor, and CommissionEmployee’s
+toString method should invoke Employee’s to-String method.
+Once you’ve completed these modifications, run the
+CommissionEmployeeTest and
+BasePlusCommissionEmployeeTest apps using these new classes
+to ensure that the apps still display the same results for a
+CommissionEmployee object and
+BasePlusCommissionEmployee object, respectively
+*/
+
 public class Employee {
+	private final String firstName;
+	private final String lastName;
+	private final String socialSecurityNumber;
 
-    // Declare instance variables
-    String first, last;
-    Double salary;
+	// Contructor
+	public Employee(String firstName, String lastName,
+					String socialSecurityNumber) {
 
-    // Constructure for employee object
-    Employee(String first, String last, Double salary){
-        this.first = first;
-        this.last = last;
-        this.salary = salary;
-    }
+		this.firstName = firstName;
+		this.lastName  = lastName;
+		this.socialSecurityNumber = socialSecurityNumber;
+	}
 
-    // Set methods
-    public void setFirst(String first) {
-        this.first = first;
-    }
+	//Get methods
+	public String getFirstName() { 
+		return firstName; }
+	public String getLastName()  { 
+		return lastName;  }
 
-    public void setLast(String last) {
-        this.last = last;
-    }
+	public String getSocialSecurityNumber() {
+		return socialSecurityNumber;
+	}
 
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
-
-    // Get methods
-    public String getFirst() {
-        return this.first;
-    }
-
-    public String getLast() {
-        return this.last;
-    }
-
-    public Double getSalary() {
-        return this.salary;
-    }
+	/*
+	//over ridden toString Method
+	public String toString() {
+      return String.format("%s: %s %s%n%s: %s%n", 
+         "employee", getFirstName(), getLastName(), 
+         "social security number", getSocialSecurityNumber());
+	}
+	*/
 }
